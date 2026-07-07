@@ -14,7 +14,7 @@ type Tab = 'About Me' | 'Education' | 'Work Experience' | 'Technologies' | 'Proj
 
 function Content() {
 
-    const [activeTab, setActiveTab] = useState<Tab>('About Me');
+    const [activeTab, setActiveTab] = useState<Tab>('Work Experience');
 
     const displayTab = () => {
 

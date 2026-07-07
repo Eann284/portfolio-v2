@@ -1,8 +1,67 @@
 import React from 'react'
+import WorkCard from '../WorkCard';
+
+interface Experience {
+  role: string;
+  company: string;
+  startDate: string;
+  endDate: string;
+  description: string;
+  current: boolean;
+}
 
 function WorkExperiencePanel() {
+
+ 
+  const experience: Experience[] = [
+    {
+      role: 'Operations Intern',
+      company: 'Prestige Interactive Enterprise OPC',
+      startDate: 'January 21, 2026',
+      endDate: 'April 21, 2026',
+      description: 'Job',
+      current: false
+    },
+    {
+      role: 'Operations Intern',
+      company: 'Prestige Interactive Enterprise OPC',
+      startDate: 'January 21, 2026',
+      endDate: 'April 21, 2026',
+      description: 'Job',
+      current: false
+    },
+      {
+      role: 'Operations Intern',
+      company: 'Prestige Interactive Enterprise OPC',
+      startDate: 'January 21, 2026',
+      endDate: 'April 21, 2026',
+      description: 'Job',
+      current: true
+    },
+  ]
+
+
+
   return (
-    <div>WorkExperiencePanel</div>
+    <div className='p-4'>
+
+      <h1 className='text-2xl text-center mb-10'>Work Experience</h1>
+
+      <section className='relative grid grid-cols-3 gap-6'>
+
+    
+        {experience.map((e) => (
+          <WorkCard 
+          role={e.role} 
+          company={e.company} 
+          startDate={e.startDate} 
+          endDate={e.endDate} 
+          description={e.description} 
+          current={e.current}/>
+        ))}
+    
+      </section>
+    </div>
   )
 }
 
