@@ -101,13 +101,14 @@ const iotTechnologies: Technologies[] = [
   )
 }
 
-const techBgColors: Record<string, string> = {
+export const techBgColors: Record<string, string> = {
   'HTML': 'bg-[#E34F26]',
   'CSS': 'bg-[#1572B6]',
   'JavaScript': 'bg-[#F7DF1E]',
   'React.js': 'bg-[#61DAFB]',
   'Next.js': 'bg-[#000000] text-white',
   'TailwindCSS': 'bg-[#06B6D4]',
+  'Python': 'bg-[#3776AB]',
   'Flask': 'bg-[#000000] text-white',
   'FastAPI': 'bg-[#009688]',
   'SQLAlchemy': 'bg-[#4B8BBE]',
