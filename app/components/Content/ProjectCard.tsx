@@ -1,4 +1,4 @@
-import { techBgColors } from "./Panels/TechnologiesPanel"
+import { techBgColors } from "../Colors";
 import { Projects } from "./Panels/ProjectsPanel"
  
 interface Props {
