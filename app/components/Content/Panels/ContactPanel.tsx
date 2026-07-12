@@ -1,8 +1,28 @@
 import React from 'react'
+import ContactForm from '../ContactForm'
+import MoreContact from '../MoreContact'
 
 function ContactPanel() {
+
+  // make function??
+  // state??
+
+
   return (
-    <div>ContactPanel</div>
+    <section className="relative flex flex-col gap-5 py-4 px-20 ">
+      <h1 className="mx-auto text-3xl">Contact</h1>
+
+      <p>Hi! I'm open to sksksdf</p>
+
+      <div className='flex flex-row gap-5 mx-auto'>
+      <ContactForm />
+
+      <MoreContact/>
+      </div>
+
+
+      
+    </section>
   )
 }
 
