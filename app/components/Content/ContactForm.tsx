@@ -24,7 +24,7 @@ function ContactForm() {
     }
 
   return (
-    <form onSubmit={handleSubmit} className='flex flex-col gap-5 w-100 mx-auto'>
+    <form onSubmit={handleSubmit} className='flex flex-col gap-5 w-100 mx-auto p-4'>
 
       
         

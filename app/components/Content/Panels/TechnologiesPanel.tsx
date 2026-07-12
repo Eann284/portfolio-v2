@@ -1,8 +1,8 @@
 import { techBgColors } from "../../Colors";
+import { icons } from "@/app/assets/icons";
 
 interface Technologies {
   name: string;
-  // icon ??
 }
 
 
@@ -10,7 +10,7 @@ interface Technologies {
 function TechnologiesPanel() {
 
   const frontEndTechnologies: Technologies[] = [
-  { name: "HTML" },
+  { name: "HTML"},
   { name: "CSS" },
   { name: "JavaScript"},
   { name: "React.js" },
@@ -48,7 +48,7 @@ const iotTechnologies: Technologies[] = [
           {
             frontEndTechnologies.map((tech) => (
               <div>
-                <TechnologyCard name={tech.name}/>
+                <TechnologyCard name={tech.name} icon={icons[tech.name]}/>
               </div>
             ))
           }
@@ -61,7 +61,7 @@ const iotTechnologies: Technologies[] = [
           {
             backEndTechnologies.map((tech) => (
               <div>
-                <TechnologyCard name={tech.name}/>
+                <TechnologyCard name={tech.name} icon={icons[tech.name]}/>
               </div>
             ))
           }
@@ -74,7 +74,7 @@ const iotTechnologies: Technologies[] = [
           {
             databaseTechnologies.map((tech) => (
               <div>
-                <TechnologyCard name={tech.name}/>
+                <TechnologyCard name={tech.name} icon={icons[tech.name]}/>
               </div>
             ))
           }
@@ -87,7 +87,7 @@ const iotTechnologies: Technologies[] = [
           {
             iotTechnologies.map((tech) => (
               <div>
-                <TechnologyCard name={tech.name}/>
+                <TechnologyCard name={tech.name} icon={icons[tech.name]}/>
               </div>
             ))
           }
@@ -100,30 +100,19 @@ const iotTechnologies: Technologies[] = [
   )
 }
 
-// export const techBgColors: Record<string, string> = {
-//   'HTML': 'bg-[#E34F26]',
-//   'CSS': 'bg-[#1572B6]',
-//   'JavaScript': 'bg-[#F7DF1E]',
-//   'React.js': 'bg-[#61DAFB]',
-//   'Next.js': 'bg-[#000000] text-white',
-//   'TailwindCSS': 'bg-[#06B6D4]',
-//   'Python': 'bg-[#3776AB]',
-//   'Flask': 'bg-[#000000] text-white',
-//   'FastAPI': 'bg-[#009688]',
-//   'SQLAlchemy': 'bg-[#4B8BBE]',
-//   'MySQL': 'bg-[#4479A1]',
-//   'HeidiSQL': 'bg-[#9B59B6]',
-//   'ESP32': 'bg-[#E7352C]',
-//   'ESP32-CAM': 'bg-[#E7352C]',
-//   'Arduino UNO': 'bg-[#00878F]',
-// }
 
-const TechnologyCard = ({ name }: { name: string }) => {
+interface TechnologyCardProps {
+  name: string;
+  icon: string;
+}
+
+const TechnologyCard = ({ name, icon}: TechnologyCardProps) => {
   const bgClass = techBgColors[name] || 'bg-gray-500'
   
   return (
-    <div className={`px-4 py-2 border m-1 rounded text-center ${bgClass}`}>
-      {name}
+    <div className={`px-4 py-2 m-1 rounded-lg font-semibold text-lg text-center ${bgClass} flex flex-row items-center gap-5`}>
+      <i className={`${icon} text-3xl`}></i>
+      <p>{name}</p>
     </div>
   )
 }
