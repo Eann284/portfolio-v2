@@ -58,7 +58,7 @@ function AboutMePanel() {
       <div className="">   
           {
             languages.map(lang=> (
-              <LanguageCard language={lang.language} mastery={lang.mastery}/>
+              <LanguageCard language={lang.language} key={lang.language} mastery={lang.mastery}/>
             ))
           }
       </div>

@@ -2,8 +2,16 @@
 import { techBgColors } from "../../Colors";
 import { icons } from "@/app/assets/icons";
 import { useState } from "react";
-import { Button } from "@/components/ui/button"
-import { ButtonGroup } from "@/components/ui/button-group"
+import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs"
+
+import {
+  Item,
+  ItemContent,
+  ItemDescription,
+  ItemGroup,
+  ItemMedia,
+  ItemTitle,
+} from "@/components/ui/item"
 
 
 interface Technologies {
@@ -52,13 +60,16 @@ const displayTab = () => {
                           <div className='grid grid-cols-3 gap-x-3 gap-y-2'>
                             {
                               frontEndTechnologies.map((tech) => (
-                                <div>
+                                <div key={tech.name}>
                                   <TechnologyCard name={tech.name} icon={icons[tech.name]}/>
                                 </div>
                               ))
                             }
                           </div>
                         </div> 
+                        
+                      
+
             case 'Back-End':
               return <div className='border px-4 py-2 rounded-xl'>
                       <h3>Back-End Development</h3>
@@ -121,17 +132,21 @@ const displayTab = () => {
           }
         </ul> */}
 
-        <ButtonGroup>
-           {
+       
+          
+       
+       <Tabs>
+        <TabsList>
+          {
             tabs.map(tab=>(
-             
-                <Button variant="outline" size="sm" onClick={() => setActiveTab(tab)}>
+                <TabsTrigger value={tab} key={tab} onClick={() => setActiveTab(tab)}>
                   {tab}
-                </Button>
+                </TabsTrigger>
   
             ))
           }
-        </ButtonGroup>
+        </TabsList>
+       </Tabs>
 
       </nav>
           
@@ -151,10 +166,10 @@ const TechnologyCard = ({ name, icon}: TechnologyCardProps) => {
   const bgClass = techBgColors[name] || 'bg-gray-500'
   
   return (
-    <div className={`px-4 py-1 m-1 rounded-lg font-semibold text-md text-center ${bgClass} flex flex-row items-center gap-5`}>
+    <Item variant="outline" role="listitem" className={`px-4 py-1 m-1 rounded-lg font-semibold text-md text-center ${bgClass} flex flex-row items-center gap-5`}>
       <i className={`${icon} text-xl`}></i>
       <p>{name}</p>
-    </div>
+    </Item>
   )
 }
 

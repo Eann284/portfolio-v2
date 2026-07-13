@@ -1,3 +1,17 @@
+import {
+  Item,
+  ItemContent,
+  ItemDescription,
+  ItemGroup,
+  ItemMedia,
+  ItemTitle,
+} from "@/components/ui/item"
+
+import { Badge } from "@/components/ui/badge"
+
+import { GraduationCap } from "lucide-react"
+
+import Image from "next/image"
 
 function EducationPanel() {
 
@@ -13,55 +27,65 @@ function EducationPanel() {
 
   const seniorHighSchool = {
     school: 'Lourdes School of Mandaluyong',
-    year: '2020-2022',
+    year: '2016-2022',
     strand: 'Science, Technology, Engineering & Mathematics (STEM)'
   }
 
-  const juniorHighSchool = {
-    school: 'Lourdes School of Mandaluyong',
-    year: '2016-2020'
-  }
-  
+
 
   return (
     <section className="flex flex-col gap-5 px-4">
       <h1 className="text-xl">Education</h1>
 
-      <div className="border rounded-lg p-4 space-y-20">
+    
+      <ItemGroup className="border rounded-lg p-4">
+        <Item className="border bg-blue-200">
+          <ItemMedia>
+            <Image src={'/images/DBTC_LOGO.png'}
+            width={60} height={60} className="object-cover"alt="dbtc"/>
+          </ItemMedia>
+          <ItemContent>
+            <ItemTitle className="text-lg">
+              {college.school}
+              
+              <Badge variant="secondary">
+                <GraduationCap data-icon="inline-start"/>
+                <span>{college.year}</span>
+              </Badge>
+            </ItemTitle>
 
+            <ItemDescription>
+              {college.course}
+            </ItemDescription>
+          </ItemContent>
 
-        <div className="relative pl-3">
+        </Item>
 
-          <div className="absolute -left-[9px] bg-red-400 w-4 h-4 top-1.5 z-10 rounded-full"></div>
+        <Item className="border-3 bg-blue-200">
+          <ItemMedia>
+            <Image src={'/images/LSM_LOGO.png'}
+            width={60} height={60} className="object-cover"alt="dbtc"/>
+          </ItemMedia>
+          <ItemContent>
+            <ItemTitle className="text-lg">
+              {seniorHighSchool.school}
+              <Badge variant="secondary">
+                <GraduationCap data-icon="inline-start"/>
+                <span>{seniorHighSchool.year}</span>
+              </Badge>
+            </ItemTitle>
 
-            <div className="flex flex-row gap-1 items-baseline">
-              <h1 className="text-xl">{college.school}</h1>
-              <span className="text-sm italic">{college.year}</span>
-            </div>
-            <h1>{college.course}</h1>
-        </div>
+            <ItemDescription>
+              {seniorHighSchool.strand}
+            </ItemDescription>
+          </ItemContent>
 
-        <div className="relative pl-3">
+          
 
-          <div className="absolute -left-[9px] bg-red-400 w-4 h-4 top-1.5 z-10 rounded-full"></div>
+        </Item>
 
-          <div className="flex flex-row gap-1 items-baseline">
-            <h1 className="text-xl">{seniorHighSchool.school}</h1>
-            <span className="text-sm italic">{seniorHighSchool.year}</span>
-          </div>
-          <h1>{seniorHighSchool.strand}</h1>
-        </div>
-
-        <div className="relative pl-3">
-
-          <div className="absolute -left-[9px] bg-red-400 w-4 h-4 top-1.5 z-10 rounded-full"></div>
-
-          <div className="flex flex-row gap-1 items-baseline">
-            <h1 className="text-xl">{juniorHighSchool.school}</h1>
-            <span className="text-sm italic">{juniorHighSchool.year}</span>
-          </div>
-        </div>
-      </div>
+       
+      </ItemGroup>
 
 
       
