@@ -1,5 +1,7 @@
+'use client';
 import { techBgColors } from "../../Colors";
 import { icons } from "@/app/assets/icons";
+import { useState } from "react";
 
 interface Technologies {
   name: string;
@@ -35,67 +37,90 @@ const iotTechnologies: Technologies[] = [
   { name: 'Arduino UNO' },
 ]
 
+const tabs = ['Front-End', 'Back-End', 'Database', 'Internet of Things']
+const [activeTab, setActiveTab] = useState('Front-End')
+
+const displayTab = () => {
+
+        switch(activeTab) {
+            case 'Front-End':
+                return <div className='border px-4 py-2 rounded-xl'>
+                          <h3>Front-End Development</h3>
+                          <div className='grid grid-cols-3 gap-x-3 gap-y-2'>
+                            {
+                              frontEndTechnologies.map((tech) => (
+                                <div>
+                                  <TechnologyCard name={tech.name} icon={icons[tech.name]}/>
+                                </div>
+                              ))
+                            }
+                          </div>
+                        </div> 
+            case 'Back-End':
+              return <div className='border px-4 py-2 rounded-xl'>
+                      <h3>Back-End Development</h3>
+                      <div className='grid grid-cols-3 gap-x-3 gap-y-2'>
+                        {
+                          backEndTechnologies.map((tech) => (
+                            <div>
+                              <TechnologyCard name={tech.name} icon={icons[tech.name]}/>
+                            </div>
+                          ))
+                        }
+                      </div>
+                    </div>
+            case 'Database':
+              return  <div className='border px-4 py-2 rounded-xl'>
+                        <h3>Database</h3>
+                        <div className='grid grid-cols-3 gap-x-3 gap-y-2'>
+                          {
+                            databaseTechnologies.map((tech) => (
+                              <div>
+                                <TechnologyCard name={tech.name} icon={icons[tech.name]}/>
+                              </div>
+                            ))
+                          }
+                        </div>
+      </div>
+
+            case 'Internet of Things':
+              return  <div className='border px-4 py-2 rounded-xl'>
+                        <h3>Internet Of Things</h3>
+                        <div className='grid grid-cols-3 gap-x-3 gap-y-2'>
+                          {
+                            iotTechnologies.map((tech) => (
+                              <div>
+                                <TechnologyCard name={tech.name} icon={icons[tech.name]}/>
+                              </div>
+                            ))
+                          }
+                        </div>
+                      </div>
+        }
+    }
+
 
   return (
     <section className="relative flex flex-col gap-5 p-4">
 
-      <h1 className="mx-auto text-3xl">Technologies and Tools</h1>
+      <h1 className="text-xl">Skills</h1>
 
-
-      <div className='border px-4 py-2 rounded-xl'>
-        <h3>Front-End Development</h3>
-        <div className='grid grid-cols-3 gap-x-3 gap-y-2'>
+      <nav>
+        <ul className="flex flex-row gap-9">
           {
-            frontEndTechnologies.map((tech) => (
-              <div>
-                <TechnologyCard name={tech.name} icon={icons[tech.name]}/>
-              </div>
+            tabs.map(tab=>(
+              <li>
+                <button onClick={() => setActiveTab(tab)}>
+                  {tab}
+                </button>
+              </li>
             ))
           }
-        </div>
-      </div>
+        </ul>
+      </nav>
+          
+          {displayTab()}
 
-      <div className='border px-4 py-2 rounded-xl'>
-        <h3>Back-End Development</h3>
-        <div className='grid grid-cols-3 gap-x-3 gap-y-2'>
-          {
-            backEndTechnologies.map((tech) => (
-              <div>
-                <TechnologyCard name={tech.name} icon={icons[tech.name]}/>
-              </div>
-            ))
-          }
-        </div>
-      </div>
-      
-      <div className='border px-4 py-2 rounded-xl'>
-        <h3>Database</h3>
-        <div className='grid grid-cols-3 gap-x-3 gap-y-2'>
-          {
-            databaseTechnologies.map((tech) => (
-              <div>
-                <TechnologyCard name={tech.name} icon={icons[tech.name]}/>
-              </div>
-            ))
-          }
-        </div>
-      </div>
-
-      <div className='border px-4 py-2 rounded-xl'>
-        <h3>Internet Of Things</h3>
-        <div className='grid grid-cols-3 gap-x-3 gap-y-2'>
-          {
-            iotTechnologies.map((tech) => (
-              <div>
-                <TechnologyCard name={tech.name} icon={icons[tech.name]}/>
-              </div>
-            ))
-          }
-        </div>
-      </div>
-
-
-      
     </section>
   )
 }
@@ -110,11 +135,16 @@ const TechnologyCard = ({ name, icon}: TechnologyCardProps) => {
   const bgClass = techBgColors[name] || 'bg-gray-500'
   
   return (
-    <div className={`px-4 py-2 m-1 rounded-lg font-semibold text-lg text-center ${bgClass} flex flex-row items-center gap-5`}>
-      <i className={`${icon} text-3xl`}></i>
+    <div className={`px-4 py-1 m-1 rounded-lg font-semibold text-md text-center ${bgClass} flex flex-row items-center gap-5`}>
+      <i className={`${icon} text-xl`}></i>
       <p>{name}</p>
     </div>
   )
 }
+
+
+
+
+
 
 export default TechnologiesPanel

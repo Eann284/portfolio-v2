@@ -24,15 +24,11 @@ function EducationPanel() {
   
 
   return (
-    <section className="relative flex flex-col gap-5 p-4">
+    <section className="flex flex-col gap-5 px-4">
+      <h1 className="text-xl">Education</h1>
 
-      <h1 className="mx-auto text-3xl">Education</h1>
+      <div className="border rounded-lg p-4 space-y-20">
 
-
-      <div className="relative border p-4 space-y-20">
-
-        {/* outside line */}
-        <div className="absolute left-[13px] w-1 h-full top-0 bg-gray-200"></div>
 
         <div className="relative pl-3">
 

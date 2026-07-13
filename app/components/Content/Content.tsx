@@ -14,19 +14,15 @@ type Tab = 'About Me' | 'Education' | 'Work Experience' | 'Technologies' | 'Proj
 
 function Content() {
 
-    const [activeTab, setActiveTab] = useState<Tab>('Contact'); // todo: change back to ABOUT ME
+    const [activeTab, setActiveTab] = useState<Tab>('About Me'); // todo: change back to ABOUT ME
 
     const displayTab = () => {
 
         switch(activeTab) {
             case 'About Me':
                 return <AboutMePanel />
-            case 'Education':
-                return <EducationPanel />
             case 'Work Experience':
                 return <WorkExperiencePanel />
-            case 'Technologies':
-                return <TechnologiesPanel />
             case 'Projects':
                 return <ProjectsPanel />
             case 'Contact':

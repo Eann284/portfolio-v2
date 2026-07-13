@@ -18,9 +18,6 @@ function MoreContact() {
         ))}
         </div>
 
-
-
-
       </article>
   )
 }

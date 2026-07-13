@@ -13,9 +13,7 @@ function PanelHeader({activeTab, setActiveTab}: Props) {
 
     const tabs: Tab[] = [
         'About Me',
-        'Education',
         'Work Experience',
-        'Technologies',
         'Projects',
         'Contact'
     ]
