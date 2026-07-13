@@ -2,6 +2,9 @@
 import { techBgColors } from "../../Colors";
 import { icons } from "@/app/assets/icons";
 import { useState } from "react";
+import { Button } from "@/components/ui/button"
+import { ButtonGroup } from "@/components/ui/button-group"
+
 
 interface Technologies {
   name: string;
@@ -106,7 +109,7 @@ const displayTab = () => {
       <h1 className="text-xl">Skills</h1>
 
       <nav>
-        <ul className="flex flex-row gap-9">
+        {/* <ul className="flex flex-row gap-9">
           {
             tabs.map(tab=>(
               <li>
@@ -116,7 +119,20 @@ const displayTab = () => {
               </li>
             ))
           }
-        </ul>
+        </ul> */}
+
+        <ButtonGroup>
+           {
+            tabs.map(tab=>(
+             
+                <Button variant="outline" size="sm" onClick={() => setActiveTab(tab)}>
+                  {tab}
+                </Button>
+  
+            ))
+          }
+        </ButtonGroup>
+
       </nav>
           
           {displayTab()}
