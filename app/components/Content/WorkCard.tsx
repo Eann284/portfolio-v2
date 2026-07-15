@@ -1,4 +1,16 @@
 import React from 'react'
+import {
+  Card,
+  CardAction,
+  CardContent,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card"
+
+import { Badge } from '@/components/ui/badge';
+import { CircleCheckBig } from 'lucide-react';
 
 
 interface Props {
@@ -12,21 +24,27 @@ role: string;
 
 function WorkCard({role, company, startDate, endDate, description, current}: Props) {
   return (
-    <div className='relative border w-full h-70 rounded-lg p-4 flex flex-col ' 
-    
-    key={role}>
+   
+    <Card key={role} >
+      <CardHeader>
 
-            <div className={`${current ? 'bg-amber-300': 'bg-red-300'} w-10 h-10 mx-auto rounded-full`}></div>
-
-            <h1 className='text-2xl text-center'>{role}</h1>
-            <h1 className='text-sm text-center'>{company}</h1>
-
-
-            <h1>{description}</h1>
-
-
-            <h1 className='text-sm italic mt-auto'>{startDate} - {endDate}</h1>
-    </div>
+        <div className='flex flex-row items-center justify-between'>
+        <CardTitle className='font-bold text-lg'>{role}</CardTitle>
+        <Badge className='bg-green-600'>
+          <CircleCheckBig/>
+          Internship
+          </Badge>
+        </div>
+        <CardDescription>{company}</CardDescription>
+        {/* <CardAction>Card Action</CardAction> */}
+      </CardHeader>
+      <CardContent>
+        <p className='text-justify'>{description}</p>
+      </CardContent>
+      <CardFooter>
+        <p className='italic font-light'>{startDate} - {endDate}</p>
+      </CardFooter>
+    </Card>
   )
 }
 

@@ -9,12 +9,12 @@ import TechnologiesPanel from './Panels/TechnologiesPanel';
 import ProjectsPanel from './Panels/ProjectsPanel';
 import ContactPanel from './Panels/ContactPanel';
 
-type Tab = 'About Me' | 'Education' | 'Work Experience' | 'Technologies' | 'Projects' | 'Contact'
+type Tab = 'About Me' | 'Work Experience' | 'Projects' | 'Contact'
 
 
 function Content() {
 
-    const [activeTab, setActiveTab] = useState<Tab>('About Me'); // todo: change back to ABOUT ME
+    const [activeTab, setActiveTab] = useState<Tab>('Work Experience'); // todo: change back to ABOUT ME
 
     const displayTab = () => {
 

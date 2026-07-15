@@ -3,7 +3,7 @@
 import { useState } from 'react'
 import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs"
 
-type Tab = 'About Me' | 'Education' | 'Work Experience' | 'Technologies' | 'Projects' | 'Contact'
+type Tab = 'About Me' | 'Work Experience' | 'Projects' | 'Contact'
 
 interface Props {
     activeTab: Tab

@@ -19,25 +19,16 @@ function WorkExperiencePanel() {
       company: 'Prestige Interactive Enterprise OPC',
       startDate: 'January 21, 2026',
       endDate: 'April 21, 2026',
-      description: 'Job',
+      description: `
+
+      As an Intern for the Operations department, I assisted in monitoring, maintaining, and troubleshooting kiosk units
+      via remote access, along with a few other tasks involving: SQL Queries, Windows OS tools and configurations, UI Development, and 
+      Program Installation.
+      
+      `,
       current: false
     },
-    {
-      role: 'Operations Intern',
-      company: 'Prestige Interactive Enterprise OPC',
-      startDate: 'January 21, 2026',
-      endDate: 'April 21, 2026',
-      description: 'Job',
-      current: false
-    },
-      {
-      role: 'Operations Intern',
-      company: 'Prestige Interactive Enterprise OPC',
-      startDate: 'January 21, 2026',
-      endDate: 'April 21, 2026',
-      description: 'Job',
-      current: true
-    },
+    
   ]
 
 
@@ -47,9 +38,8 @@ function WorkExperiencePanel() {
 
       <h1 className='text-2xl text-center mb-10'>Work Experience</h1>
 
-      <section className='relative grid grid-cols-3 gap-6'>
+      <section className='grid grid-cols-2 gap-6'>
 
-    
         {experience.map((e) => (
           <WorkCard 
           role={e.role} 
