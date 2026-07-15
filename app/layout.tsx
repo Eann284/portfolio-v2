@@ -3,15 +3,15 @@ import { Geist, Geist_Mono, Inter, DM_Sans  } from "next/font/google";
 import "./globals.css";
 import 'devicon/devicon.min.css'
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
+// const geistSans = Geist({
+//   variable: "--font-geist-sans",
+//   subsets: ["latin"],
+// });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
+// const geistMono = Geist_Mono({
+//   variable: "--font-geist-mono",
+//   subsets: ["latin"],
+// });
 
 const inter = Inter({
   subsets: ['latin'],

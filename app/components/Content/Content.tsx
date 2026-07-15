@@ -1,44 +1,40 @@
-'use client';
+"use client";
 
-import { useState } from 'react'
-import PanelHeader from './PanelHeader'
-import AboutMePanel from './Panels/AboutMePanel';
-import EducationPanel from './Panels/EducationPanel';
-import WorkExperiencePanel from './Panels/WorkExperiencePanel';
-import TechnologiesPanel from './Panels/TechnologiesPanel';
-import ProjectsPanel from './Panels/ProjectsPanel';
-import ContactPanel from './Panels/ContactPanel';
+import { useState } from "react";
+import PanelHeader from "./PanelHeader";
+import AboutMePanel from "./Panels/AboutMePanel";
+import EducationPanel from "./Panels/EducationPanel";
+import WorkExperiencePanel from "./Panels/WorkExperiencePanel";
+import TechnologiesPanel from "./Panels/TechnologiesPanel";
+import ProjectsPanel from "./Panels/ProjectsPanel";
+import ContactPanel from "./Panels/ContactPanel";
 
-type Tab = 'About Me' | 'Work Experience' | 'Projects' | 'Contact'
-
+type Tab = "About Me" | "Work Experience" | "Projects" | "Contact";
 
 function Content() {
+  const [activeTab, setActiveTab] = useState<Tab>("About Me"); // todo: change back to ABOUT ME
 
-    const [activeTab, setActiveTab] = useState<Tab>('About Me'); // todo: change back to ABOUT ME
-
-    const displayTab = () => {
-
-        switch(activeTab) {
-            case 'About Me':
-                return <AboutMePanel />
-            case 'Work Experience':
-                return <WorkExperiencePanel />
-            case 'Projects':
-                return <ProjectsPanel />
-            case 'Contact':
-                return <ContactPanel />
-
-        }
+  const displayTab = () => {
+    switch (activeTab) {
+      case "About Me":
+        return <AboutMePanel />;
+      case "Work Experience":
+        return <WorkExperiencePanel />;
+      case "Projects":
+        return <ProjectsPanel />;
+      case "Contact":
+        return <ContactPanel />;
     }
+  };
 
   return (
     <main>
-        <PanelHeader activeTab={activeTab} setActiveTab={setActiveTab}/>
+      <PanelHeader activeTab={activeTab} setActiveTab={setActiveTab} />
 
-        {/* call function to display active tab */}
-        {displayTab()}
+      {/* call function to display active tab */}
+      {displayTab()}
     </main>
-  )
+  );
 }
 
-export default Content
+export default Content;

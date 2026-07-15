@@ -9,7 +9,6 @@ export default function Home() {
           <Profile />
         </div>
 
-
         <div className="border col-span-7 h-full p-4">
           <Content />
         </div>
