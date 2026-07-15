@@ -1,16 +1,35 @@
+import {
+  Avatar,
+  AvatarFallback,
+  AvatarImage,
+} from "@/components/ui/avatar"
+import { Card } from "@/components/ui/card";
+
+import {
+  Item,
+  ItemActions,
+  ItemContent,
+  ItemDescription,
+  ItemGroup,
+  ItemMedia,
+  ItemSeparator,
+  ItemTitle,
+} from "@/components/ui/item"
+
+
 function MoreContact() {
   const socials = [
-    { name: "LinkedIn", logo: "/images/linkedin.png" },
-    { name: "GitHub", logo: "/images/github.png" },
+    { name: "LinkedIn", logo: "/images/linkedin.png", user: 'Eann Seth Parreno' },
+    { name: "GitHub", logo: "/images/github.png", user: 'Eann284' },
   ];
 
   return (
     <article className="w-100 border p-4">
       <h2>You can also find me on:</h2>
 
-      <div className="flex flex-row gap-5 mx-auto">
+      <div className="flex flex-col gap-5 mt-1 mx-auto">
         {socials.map((social) => (
-          <SocialCard name={social.name} logo={social.logo} />
+          <SocialCard name={social.name} logo={social.logo} username={social.user}/>
         ))}
       </div>
     </article>
@@ -20,14 +39,29 @@ function MoreContact() {
 interface CardProps {
   name: string;
   logo: string;
+  username: string;
 }
 
-const SocialCard = ({ name, logo }: CardProps) => {
+const SocialCard = ({ name, logo, username }: CardProps) => {
   return (
-    <div className="p-4 rounded-xl mx-auto border">
-      <img src={logo} alt="" className="size-30" />
-      <h1 className="text-center mt-5">{name}</h1>
-    </div>
+  
+    <ItemGroup>
+      <Item variant="outline">
+      <ItemMedia>
+        <Avatar className='size-15'>
+          <AvatarImage src={logo} />
+        </Avatar>
+      </ItemMedia>
+
+      <ItemContent>
+        <ItemTitle className="font-bold">{name}</ItemTitle>
+        <ItemDescription>{username}</ItemDescription>
+      </ItemContent>
+    </Item>
+    </ItemGroup>
+
+
+
   );
 };
 

@@ -9,7 +9,7 @@ function ContactPanel() {
 
       <p className="text-center">Feel free to leave a message for me!</p>
 
-      <div className="flex flex-row gap-5 mx-auto">
+      <div className="flex flex-row gap-5 mx-auto border rounded-lg p-4">
         <ContactForm />
 
         <MoreContact />

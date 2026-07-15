@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono, Inter, DM_Sans  } from "next/font/google";
+import { Toaster } from "@/components/ui/sonner"
 import "./globals.css";
 import 'devicon/devicon.min.css'
 
@@ -31,9 +32,13 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${inter.variable} h-full antialiased`}
+      className={`${inter.variable} h-full dark antialiased `}
     >
-      <body className="min-h-full flex flex-col">{children}</body>
+      <body className="min-h-full flex flex-col bg-[#0a0a0f]">
+        <main>{children}</main>
+        <Toaster position="top-center"/>
+      </body>
+
     </html>
   );
 }

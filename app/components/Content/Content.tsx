@@ -12,7 +12,7 @@ import ContactPanel from "./Panels/ContactPanel";
 type Tab = "About Me" | "Work Experience" | "Projects" | "Contact";
 
 function Content() {
-  const [activeTab, setActiveTab] = useState<Tab>("About Me"); // todo: change back to ABOUT ME
+  const [activeTab, setActiveTab] = useState<Tab>("Contact"); // todo: change back to ABOUT ME
 
   const displayTab = () => {
     switch (activeTab) {
