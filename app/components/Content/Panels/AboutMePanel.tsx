@@ -2,11 +2,19 @@ import { Guitar, Bike, LucideIcon } from "lucide-react";
 import { techBgColors } from "../../Colors";
 import TechnologiesPanel from "./TechnologiesPanel";
 import EducationPanel from "./EducationPanel";
+import {
+  HoverCard,
+  HoverCardContent,
+  HoverCardTrigger,
+} from "@/components/ui/hover-card"
+import { Button } from "@/components/ui/button"
 
+import { Progress } from "@/components/ui/progress"
 
 interface LanguageTypes {
   language: string;
   mastery: number;
+  description: string;
 }
 
 interface HobbiesTypes {
@@ -27,9 +35,16 @@ function AboutMePanel() {
   // stats? project count, years of experience, etc.  
 
   const languages: LanguageTypes[] = [
-  {language: 'English', mastery: 100},
-  {language: 'Filipino', mastery: 100},
-  {language: 'Korean', mastery: 25},
+  {language: 'English', mastery: 100, 
+    description:`I was taught the English language 
+    since I was a child. Growing up, I constantly used English to communicate with others until I became fluent.`},
+
+  {language: 'Filipino', mastery: 100, 
+    description:`As a natural born Filipino, I am fluent in my country's language, mainly Tagalog, as I use it interchangeably
+    with English. I only know Tagalog as it is the main dialect in my province.`},
+  {language: 'Korean', mastery: 25, 
+    description:`I started to learn Korean just for fun and I know some of the basics. From the writing system to a handful of words in my
+    vocabulary, although my overall conversation skills are not as sharp.`},
   ]
 
   const hobbies:HobbiesTypes[] = [
@@ -55,10 +70,16 @@ function AboutMePanel() {
 
 
     {/* row 3 */}
-      <div className="">   
+      <div className="flex flex-col border px-4">
+        <h3 className="text-sm">Hover for more information</h3>
           {
             languages.map(lang=> (
-              <LanguageCard language={lang.language} key={lang.language} mastery={lang.mastery}/>
+
+              <div className="grid grid-cols-[auto_1fr] items-center gap-4" key={lang.language}>
+                <LanguageCard language={lang.language} key={lang.language} mastery={lang.mastery} description={lang.description}/>
+                <Progress value={lang.mastery} />
+              </div>
+              
             ))
           }
       </div>
@@ -78,23 +99,18 @@ function AboutMePanel() {
   )
 }
 
-const LanguageCard = ({language, mastery}: LanguageTypes) => {
+const LanguageCard = ({language, mastery, description}: LanguageTypes) => {
   return(
-    <div className="w-50">
-      <h1>{language}</h1>
-      <div className={`h-2 bg-green-200`} style={{width: `${mastery}%`}}/>
-    </div>
+    <HoverCard>
+      <HoverCardTrigger delay={10} closeDelay={100} render={<Button className="w-20 ">{language}</Button>}/>
+      <HoverCardContent className="text-justify">
+        {description}
+      </HoverCardContent>
+    </HoverCard>
   )
 }
 
-const  HobbiesCard = ({hobby, icon: Icon}: HobbiesTypes) => {
-  return(
-    <div className="w-40 flex flex-row items-center w-50 gap-5">
-      <Icon size={24}/>
-      <span>{hobby}</span>
-    </div>
-  )
-}
+
 
 
 interface TechnologyCardProps {

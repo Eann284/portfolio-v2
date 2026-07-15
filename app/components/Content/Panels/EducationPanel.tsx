@@ -34,7 +34,7 @@ function EducationPanel() {
 
 
   return (
-    <section className="flex flex-col gap-5 px-4">
+    <section className="flex flex-col gap-5 px-4 cursor-default">
       <h1 className="text-xl">Education</h1>
 
     

@@ -115,26 +115,12 @@ const displayTab = () => {
 
 
   return (
-    <section className="relative flex flex-col gap-5 p-4">
+    <section className="relative flex flex-col gap-5 p-4 select-none">
 
       <h1 className="text-xl">Skills</h1>
 
       <nav>
-        {/* <ul className="flex flex-row gap-9">
-          {
-            tabs.map(tab=>(
-              <li>
-                <button onClick={() => setActiveTab(tab)}>
-                  {tab}
-                </button>
-              </li>
-            ))
-          }
-        </ul> */}
-
-       
-          
-       
+                 
        <Tabs>
         <TabsList>
           {
