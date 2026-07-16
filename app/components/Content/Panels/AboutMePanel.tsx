@@ -75,7 +75,7 @@ function AboutMePanel() {
         </div>
 
         {/* row 3 */}
-        <div className="flex flex-col border px-4">
+        <div className="flex flex-col gap-3 px-4">
           <h3 className="text-sm">Hover for more information</h3>
           {languages.map((lang) => (
             <div
@@ -88,7 +88,7 @@ function AboutMePanel() {
                 mastery={lang.mastery}
                 description={lang.description}
               />
-              <Progress value={lang.mastery} />
+              <Progress value={lang.mastery}/>
             </div>
           ))}
         </div>
@@ -114,8 +114,9 @@ const LanguageCard = ({ language, mastery, description }: LanguageTypes) => {
         delay={10}
         closeDelay={100}
         render={<Button className="w-20 ">{language}</Button>}
+        className='bg-[#1a0808] ring-2 ring-green-500 shadow-[0_0_8px_#58cc02,0_0_16px_#58cc02] hover:shadow-[0_0_12px_#58cc02,0_0_24px_#58cc02,0_0_40px_#58cc02] hover:ring-3 transition duration-200 text-white font-semibold'
       />
-      <HoverCardContent className="text-justify">
+      <HoverCardContent className="text-justify bg-[#58cc02]">
         {description}
       </HoverCardContent>
     </HoverCard>

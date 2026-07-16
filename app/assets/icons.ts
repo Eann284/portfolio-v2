@@ -1,6 +1,6 @@
 export const icons: Record<string, string> = {
 
-'HTML': 'devicon-html5-plain',
+  'HTML': 'devicon-html5-plain',
   'CSS': 'devicon-css3-plain',
   'JavaScript': 'devicon-javascript-plain',
   'React.js': 'devicon-react-original',
