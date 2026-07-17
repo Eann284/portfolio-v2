@@ -24,8 +24,8 @@ function MoreContact() {
   ];
 
   return (
-    <article className="w-100 border p-4">
-      <h2>You can also find me on:</h2>
+    <article className="w-100 p-4">
+      <h2>Thank you for sending me a message! You can also find me on:</h2>
 
       <div className="flex flex-col gap-5 mt-1 mx-auto">
         {socials.map((social) => (
@@ -45,7 +45,7 @@ interface CardProps {
 const SocialCard = ({ name, logo, username }: CardProps) => {
   return (
   
-    <ItemGroup>
+    <ItemGroup className="ring-2 ring-green-500 shadow-[0_0_8px_#58cc02,0_0_16px_#58cc02] rounded-lg">
       <Item variant="outline">
       <ItemMedia>
         <Avatar className='size-15'>

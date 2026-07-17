@@ -21,7 +21,7 @@ const colors: Record<string, string> = techBgColors;
 
 function ProjectCard({ project }: Props) {
   return (
-    <Card>
+    <Card className="ring-2 ring-green-500 shadow-[0_0_8px_#22c55e,0_0_16px_#22c55e]">
       <CardHeader>
         <CardTitle>{project.title}</CardTitle>
         <CardDescription className="flex flex-row gap-2">
@@ -36,7 +36,7 @@ function ProjectCard({ project }: Props) {
           ))}
         </CardDescription>
         <CardAction>
-          <Badge>{project.timeline}</Badge>
+          <Badge className="ring-2 ring-green-500 bg-transparent text-white shadow-[0_0_8px_#22c55e,0_0_16px_#22c55e]">{project.timeline}</Badge>
         </CardAction>
       </CardHeader>
       <CardContent>
