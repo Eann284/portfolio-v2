@@ -61,22 +61,39 @@ function AboutMePanel() {
   ];
 
   return (
-    <section className="flex flex-col gap-2 p-4">
+    <section className=" grid 
+  grid-cols-1 
+  lg:gap-2 
+  p-4
+  w-full
+  max-w-full
+  overflow-hidden
+    ">
       {/* row 1 */}
-      <div className="grid grid-cols-[65%_35%] gap-5 px-4">
+      <div className="
+      grid 
+      lg:grid-cols-[65%_35%] gap-5 px-4">
         <h1 className="text-xl">About Me</h1>
-        <h1 className="text-xl">Languages</h1>
       </div>
 
       {/* row 2 */}
-      <div className="grid grid-cols-[65%_35%] gap-5 px-4">
+      <div className="grid 
+      
+      grid-cols-1 
+
+      lg:grid-cols-[65%_35%] gap-5 px-4
+
+      ">
         <div>
           <p className="text-justify">{personalInformation}</p>
         </div>
 
         {/* row 3 */}
         <div className="flex flex-col gap-3 px-4">
-          <h3 className="text-sm">Hover for more information</h3>
+
+          <div className="grid grid-cols-1 gap-2">
+            <h1 className="text-xl">Languages</h1>
+
           {languages.map((lang) => (
             <div
               className="grid grid-cols-[auto_1fr] items-center gap-4"
@@ -91,6 +108,7 @@ function AboutMePanel() {
               <Progress value={lang.mastery}/>
             </div>
           ))}
+          </div>
         </div>
       </div>
 
@@ -133,7 +151,9 @@ const TechnologyCard = ({ name, icon }: TechnologyCardProps) => {
 
   return (
     <div
-      className={`px-4 py-2 m-1 rounded-lg font-semibold text-lg text-center ${bgClass} flex flex-row items-center gap-5`}
+      className={`flex flex-row 
+        px-4 py-2 m-1 rounded-lg font-semibold text-sm text-center ${bgClass} items-center gap-5
+        `}
     >
       <i className={`${icon} text-3xl`}></i>
       <p>{name}</p>

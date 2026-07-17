@@ -24,11 +24,11 @@ interface ProfileCardProps {
   onContactClick?: () => void;
 }
 
-const DEFAULT_INNER_GRADIENT = 'linear-gradient(145deg,#60496e8c 0%,#71C4FF44 100%)';
+const DEFAULT_INNER_GRADIENT = 'linear-gradient(180deg,#60496e8c 0%,#71C4FF44 100%)';
 
 const ANIMATION_CONFIG = {
   INITIAL_DURATION: 1200,
-  INITIAL_X_OFFSET: 70,
+  INITIAL_X_OFFSET: 90,
   INITIAL_Y_OFFSET: 60,
   DEVICE_BETA_OFFSET: 20,
   ENTER_TRANSITION_MS: 180

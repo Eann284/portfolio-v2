@@ -44,16 +44,23 @@ function TechnologiesPanel() {
     { name: "Arduino UNO" },
   ];
 
-  const tabs = ["Front-End", "Back-End", "Database", "Internet of Things"];
+  const tabs = ["Front-End", "Back-End", "Database", "IoT"];
   const [activeTab, setActiveTab] = useState("Front-End");
 
   const displayTab = () => {
     switch (activeTab) {
       case "Front-End":
         return (
-          <div className="px-4 py-2 rounded-xl ring-2 ring-green-500 shadow-[0_0_8px_#22c55e,0_0_16px_#22c55e]">
+          <div className="px-4 py-2 rounded-xl ring-2 ring-green-500 shadow-[0_0_8px_#22c55e,0_0_16px_#22c55e]
+          
+          ">
             <h3>Front-End Development</h3>
-            <div className="grid grid-cols-3 gap-x-3 gap-y-2">
+            <div className="grid
+          
+            grid-cols-2
+            lg:grid-cols-3 gap-x-3 gap-y-2
+            
+            ">
               {frontEndTechnologies.map((tech) => (
                 <div key={tech.name}>
                   <TechnologyCard name={tech.name} icon={icons[tech.name]} />
@@ -67,7 +74,10 @@ function TechnologiesPanel() {
         return (
           <div className="border px-4 py-2 rounded-xl ring-2 ring-green-500 shadow-[0_0_8px_#22c55e,0_0_16px_#22c55e]">
             <h3>Back-End Development</h3>
-            <div className="grid grid-cols-3 gap-x-3 gap-y-2">
+            <div className="grid
+          
+            grid-cols-1
+            lg:grid-cols-3 gap-x-3 gap-y-2">
               {backEndTechnologies.map((tech) => (
                 <div>
                   <TechnologyCard name={tech.name} icon={icons[tech.name]} />
@@ -80,7 +90,10 @@ function TechnologiesPanel() {
         return (
           <div className="border px-4 py-2 rounded-xl ring-2 ring-green-500 shadow-[0_0_8px_#22c55e,0_0_16px_#22c55e]">
             <h3>Database</h3>
-            <div className="grid grid-cols-3 gap-x-3 gap-y-2">
+            <div className="grid
+          
+            grid-cols-1
+            lg:grid-cols-3 gap-x-3 gap-y-2">
               {databaseTechnologies.map((tech) => (
                 <div>
                   <TechnologyCard name={tech.name} icon={icons[tech.name]} />
@@ -90,11 +103,14 @@ function TechnologiesPanel() {
           </div>
         );
 
-      case "Internet of Things":
+      case "IoT":
         return (
           <div className="border px-4 py-2 rounded-xl ring-2 ring-green-500 shadow-[0_0_8px_#22c55e,0_0_16px_#22c55e]">
             <h3>Internet Of Things</h3>
-            <div className="grid grid-cols-3 gap-x-3 gap-y-2">
+            <div className="grid grid-cols-1 
+            
+            lg:grid-cols-3
+            gap-x-3 gap-y-2">
               {iotTechnologies.map((tech) => (
                 <div>
                   <TechnologyCard name={tech.name} icon={icons[tech.name]} />
@@ -107,18 +123,23 @@ function TechnologiesPanel() {
   };
 
   return (
-    <section className="relative flex flex-col gap-5 p-4 select-none">
+    <section className="flex flex-col gap-5 p-4 select-none">
       <h1 className="text-xl">Skills</h1>
 
       <nav>
         <Tabs>
-          <TabsList>
+          <TabsList className='flex overflow-y-hidden gap-1 px-2 '>
             {tabs.map((tab) => (
               <TabsTrigger
                 value={tab}
                 key={tab}
                 onClick={() => setActiveTab(tab)}
-                className="dark:data-active:bg-[#080f0e] dark:data-active:text-green-400 dark:data-active:ring dark:data-active:ring-green-500 dark:data-active:shadow-[0_0_8px_#22c55e,0_0_16px_#22c55e] dark:data-active:hover:shadow-[0_0_12px_#22c55e,0_0_24px_#22c55e,0_0_40px_#22c55e] dark:data-active:hover:ring-3 dark:data-active:transition dark:data-active:duration-200  "
+                className="dark:data-active:bg-[#080f0e] dark:data-active:text-green-400 dark:data-active:ring dark:data-active:ring-green-500 dark:data-active:shadow-[0_0_8px_#22c55e,0_0_16px_#22c55e] dark:data-active:hover:shadow-[0_0_12px_#22c55e,0_0_24px_#22c55e,0_0_40px_#22c55e] dark:data-active:hover:ring-3 dark:data-active:transition dark:data-active:duration-200
+                
+                text-xs
+                lg:text-md
+                text-start
+                "
               >
                 {tab}
               </TabsTrigger>
@@ -144,7 +165,15 @@ const TechnologyCard = ({ name, icon }: TechnologyCardProps) => {
     <Item
       variant="outline"
       role="listitem"
-      className={`px-4 py-1 m-1 rounded-lg font-semibold text-md text-center ${bgClass} flex flex-row items-center gap-5`}
+      className={`
+        flex flex-row 
+        px-2 py-1 m-1 rounded-lg font-semibold 
+        text-xs text-center ${bgClass} 
+        items-center gap-1
+
+        lg:px-4 
+        lg:text-lg
+        `}
     >
       <i className={`${icon} text-xl`}></i>
       <p>{name}</p>

@@ -116,12 +116,14 @@
   animation: holo-bg 18s linear infinite;
   animation-play-state: running;
   mix-blend-mode: color-dodge;
+
 }
+
 
 .pc-shine,
 .pc-shine::after {
-  --space: 5%;
-  --angle: -45deg;
+  --space: 20%;
+  --angle: 180deg;
   transform: translate3d(0, 0, 1px);
   overflow: hidden;
   z-index: 3;
@@ -178,8 +180,8 @@
 
 .pc-card:hover .pc-shine,
 .pc-card.active .pc-shine {
-  filter: brightness(0.85) contrast(1.5) saturate(0.5);
-  animation-play-state: paused;
+  filter: brightness(0.3) contrast(1.5) saturate(0.5);
+  animation-play-state:paused;
 }
 
 .pc-card:hover .pc-shine::before,

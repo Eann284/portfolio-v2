@@ -42,10 +42,13 @@ function Profile() {
   enableTilt={false}
   enableMobileTilt={false}
   onContactClick={() => console.log('Contact clicked')}
-  behindGlowColor="rgba(88, 204, 2, 0.08)"  // 👈 Green glow (58cc02)
+  // behindGlowColor="rgba(125, 190, 255, 0.67)"
+  // behindGlowSize='40%'
   iconUrl=""
+
   behindGlowEnabled={true}
-  innerGradient="linear-gradient(145deg, rgba(88, 204, 2, 0.1) 0%, rgba(88, 204, 2, 0.03) 100%)"
+  // className='ring-2 ring-green-400 shadow-[0_0_8px_#22c55e,0_0_16px_#22c55e] rounded-2xl'
+  innerGradient="linear-gradient(145deg, rgba(88, 204, 2, 0.5) 0%, rgba(88, 204, 2, 0.1) 30%, rgba(88, 204, 2, 0.3) 60%, rgba(88, 204, 2, 0.02) 100%)"
 />
   
 
