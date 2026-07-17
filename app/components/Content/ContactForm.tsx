@@ -48,23 +48,23 @@ function ContactForm() {
     <form
       key={resetKey}
       onSubmit={handleSubmit}
-      className="flex flex-col gap-5 w-100 mx-auto p-4"
+      className="flex flex-col gap-5 w-150 mx-auto p-4 ring-2 ring-green-500 shadow-[0_0_8px_#22c55e,0_0_16px_#22c55e] rounded-lg"
     >
-      <FieldSet className="w-full max-w-sm">
+      <FieldSet className="w-full  mx-auto">
       <FieldGroup>
         <div className="grid grid-cols-2 gap-4">
           <Field>
             <FieldLabel htmlFor="city">Name</FieldLabel>
-            <Input name="firstName" type="text"/>
+            <Input name="firstName" type="text" required className="ring-2 ring-green-500 shadow-[0_0_8px_#22c55e,0_0_16px_#22c55e]"/>
           </Field>
           <Field>
             <FieldLabel htmlFor="zip">Email</FieldLabel>
-            <Input name="email" type="text"/>
+            <Input name="email" type="text" required className="ring-2 ring-green-500 shadow-[0_0_8px_#22c55e,0_0_16px_#22c55e]"/>
           </Field>
         </div>
          <Field>
-          <FieldLabel htmlFor="street">Street Address</FieldLabel>
-          <Textarea name="body" placeholder="Hello, Eann!" />
+          <FieldLabel htmlFor="street">Message</FieldLabel>
+          <Textarea name="body" placeholder="Hello, Eann!" required className="ring-2 ring-green-500 shadow-[0_0_8px_#22c55e,0_0_16px_#22c55e]"/>
         </Field>
       </FieldGroup>
       <Button type="submit">Send Message</Button>

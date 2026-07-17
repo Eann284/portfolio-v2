@@ -30,11 +30,11 @@ function WorkCard({
   current,
 }: Props) {
   return (
-    <Card key={role}>
+    <Card key={role} className="ring-2 ring-green-500 shadow-[0_0_8px_#22c55e,0_0_16px_#22c55e]">
       <CardHeader>
         <div className="flex flex-row items-center justify-between">
           <CardTitle className="font-bold text-lg">{role}</CardTitle>
-          <Badge className="bg-green-600">
+          <Badge className="bg-green-600 ring-2 ring-green-500 shadow-[0_0_8px_#22c55e,0_0_16px_#22c55e] text-white">
             <CircleCheckBig />
             Internship
           </Badge>

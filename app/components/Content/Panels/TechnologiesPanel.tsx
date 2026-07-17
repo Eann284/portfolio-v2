@@ -51,7 +51,7 @@ function TechnologiesPanel() {
     switch (activeTab) {
       case "Front-End":
         return (
-          <div className="border px-4 py-2 rounded-xl">
+          <div className="px-4 py-2 rounded-xl ring-2 ring-green-500 shadow-[0_0_8px_#22c55e,0_0_16px_#22c55e]">
             <h3>Front-End Development</h3>
             <div className="grid grid-cols-3 gap-x-3 gap-y-2">
               {frontEndTechnologies.map((tech) => (
@@ -65,7 +65,7 @@ function TechnologiesPanel() {
 
       case "Back-End":
         return (
-          <div className="border px-4 py-2 rounded-xl">
+          <div className="border px-4 py-2 rounded-xl ring-2 ring-green-500 shadow-[0_0_8px_#22c55e,0_0_16px_#22c55e]">
             <h3>Back-End Development</h3>
             <div className="grid grid-cols-3 gap-x-3 gap-y-2">
               {backEndTechnologies.map((tech) => (
@@ -78,7 +78,7 @@ function TechnologiesPanel() {
         );
       case "Database":
         return (
-          <div className="border px-4 py-2 rounded-xl">
+          <div className="border px-4 py-2 rounded-xl ring-2 ring-green-500 shadow-[0_0_8px_#22c55e,0_0_16px_#22c55e]">
             <h3>Database</h3>
             <div className="grid grid-cols-3 gap-x-3 gap-y-2">
               {databaseTechnologies.map((tech) => (
@@ -92,7 +92,7 @@ function TechnologiesPanel() {
 
       case "Internet of Things":
         return (
-          <div className="border px-4 py-2 rounded-xl">
+          <div className="border px-4 py-2 rounded-xl ring-2 ring-green-500 shadow-[0_0_8px_#22c55e,0_0_16px_#22c55e]">
             <h3>Internet Of Things</h3>
             <div className="grid grid-cols-3 gap-x-3 gap-y-2">
               {iotTechnologies.map((tech) => (
