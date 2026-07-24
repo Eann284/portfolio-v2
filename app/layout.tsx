@@ -4,6 +4,9 @@ import { Toaster } from "@/components/ui/sonner"
 import { JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 import 'devicon/devicon.min.css'
+import Header from "./components/Header";
+import ShapeGrid from '@/components/ShapeGrid';
+
 
 // const inter = Inter({
 //   subsets: ['latin'],
@@ -35,8 +38,20 @@ export default function RootLayout({
       <head>
         <link href="https://api.fontshare.com/v2/css?f[]=jet-brains-mono@300&display=swap" rel="stylesheet"></link>
       </head>
-      <body className="min-h-full flex flex-col bg-[#0a0a0f] font-['JetBrains_Mono',monospace]">
-        <main>{children}</main>
+      <body className="min-h-full flex flex-col font-['JetBrains_Mono',monospace]">
+        <div className="fixed inset-0 z-0 opacity-20 pointer-events-none">
+          <ShapeGrid speed={0.5}
+            squareSize={40}
+            direction='down' // up, down, left, right, diagonal
+            borderColor="#22c55e"
+            hoverFillColor='#22c55e'
+            shape='square' // square, hexagon, circle, triangle
+            hoverTrailAmount={0} // number of trailing hovered shapes (0 = no trail)
+             
+              />
+        </div>
+        <Header/>
+        <main className="pt-15 lg:pt-10 ">{children}</main>
         <Toaster position="top-center"/>
       </body>
 

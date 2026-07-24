@@ -113,7 +113,7 @@ function AboutMePanel() {
       </div>
 
       {/* row 4 */}
-      <div className="h-65">
+      <div className="min-h-[300px]">
         <TechnologiesPanel />
       </div>
 

@@ -3,7 +3,7 @@ import Profile from "./components/Profile/Profile";
 
 export default function Home() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
+    <div className="flex flex-col flex-1 items-center justify-center font-sans dark:bg-black">
       <main className="
       grid 
         grid-cols-1           /* Mobile: 1 column */
@@ -11,10 +11,12 @@ export default function Home() {
         gap-6 p-4 
         w-full max-w-7xl      /* Constrain width */
         mx-auto               /* Center */
-        items-start           /* Align to top */
+        items-start
+                 /* Align to top */
 
         
       ">
+        
         <div className="
          rounded-2xl 
           ring-2 ring-green-400 
@@ -34,7 +36,7 @@ export default function Home() {
           p-4
           lg:col-span-7        
           col-span-1           
-          h-auto lg:h-full">
+          h-full lg:h-full">
           <Content />
         </div>
       </main>

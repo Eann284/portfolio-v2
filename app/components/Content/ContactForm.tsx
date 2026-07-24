@@ -50,7 +50,7 @@ function ContactForm() {
       onSubmit={handleSubmit}
       className="flex flex-col gap-5 w-150 mx-auto p-4 ring-2 ring-green-500 shadow-[0_0_8px_#22c55e,0_0_16px_#22c55e] rounded-lg"
     >
-      <FieldSet className="w-full  mx-auto">
+      <FieldSet className="w-full mx-auto">
       <FieldGroup>
         <div className="grid grid-cols-2 gap-4">
           <Field>

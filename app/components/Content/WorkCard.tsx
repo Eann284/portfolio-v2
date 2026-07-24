@@ -30,16 +30,26 @@ function WorkCard({
   current,
 }: Props) {
   return (
-    <Card key={role} className="ring-2 ring-green-500 shadow-[0_0_8px_#22c55e,0_0_16px_#22c55e]">
-      <CardHeader>
-        <div className="flex flex-row items-center justify-between">
+    <Card key={role} className="
+    ring-2 ring-green-500 shadow-[0_0_8px_#22c55e,0_0_16px_#22c55e]
+  
+    ">
+      <CardHeader className="space-y-3">
+        <div className="flex 
+        
+        items-center justify-between
+        flex-col gap-2
+        lg:flex-row
+
+        ">
           <CardTitle className="font-bold text-lg">{role}</CardTitle>
           <Badge className="bg-green-600 ring-2 ring-green-500 shadow-[0_0_8px_#22c55e,0_0_16px_#22c55e] text-white">
             <CircleCheckBig />
             Internship
           </Badge>
         </div>
-        <CardDescription>{company}</CardDescription>
+
+        <CardDescription className="text-center lg:text-left">{company}</CardDescription>
       </CardHeader>
       <CardContent>
         <p className="text-justify">{description}</p>

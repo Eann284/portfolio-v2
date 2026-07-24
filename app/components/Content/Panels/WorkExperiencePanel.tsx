@@ -32,7 +32,10 @@ function WorkExperiencePanel() {
     <div className="p-4">
       <h1 className="text-2xl text-center mb-10">Work Experience</h1>
 
-      <section className="grid grid-cols-2 gap-6">
+      <section className="
+      grid
+      grid-cols-1
+      lg:grid-cols-2 gap-6">
         {experience.map((e) => (
           <WorkCard
             role={e.role}

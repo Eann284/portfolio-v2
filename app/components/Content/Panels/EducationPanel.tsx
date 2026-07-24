@@ -30,33 +30,69 @@ function EducationPanel() {
     <section className="flex flex-col gap-5 px-4 cursor-default ">
       <h1 className="text-xl">Education</h1>
 
-      <ItemGroup className="flex flex-row rounded-lg p-4 ring-green-500 shadow-[0_0_8px_#22c55e,0_0_16px_#22c55e]">
-        <Item className="ring-2 ring-blue-300 bg-blue-900 items-baseline shadow-[0_0_8px_#3b82f6,0_0_16px_#3b82f6]">
-          <ItemMedia className="bg-white p-1 rounded-full">
+      <ItemGroup className="flex 
+      
+   
+      lg:flex-row
+      
+      
+      rounded-lg p-4 ring-green-500 shadow-[0_0_8px_#22c55e,0_0_16px_#22c55e]">
+        <Item className="
+        ring-2 
+        bg-[#0a1a0a]
+        items-baseline 
+        ring-2 ring-green-500 shadow-[0_0_8px_#22c55e,0_0_16px_#22c55e]
+        flex flex-col items-center
+        lg:flex-row items-baseline     
+        ">
+          <ItemMedia className="bg-white p-1 rounded-full mx-auto">
             <Image
               src={"/images/DBTC_LOGO.png"}
               width={100}
               height={100}
-              className="object-cover"
+              className="object-cover
+            
+              "
               alt="dbtc"
             />
           </ItemMedia>
-          <ItemContent>
-            <ItemTitle className="text-lg">
+          <ItemContent className="mx-auto">
+            <ItemTitle className="
+            text-xs
+            mx-auto
+            lg:text-lg
+            lg:mx-0
+            ">
               {college.school}
 
             </ItemTitle>
 
-            <ItemDescription>{college.course}</ItemDescription>
-              <Badge variant="secondary" className="ring-2 ring-green-400 shadow-[0_0_8px_#22c55e,0_0_16px_#22c55e] bg-green-800">
+            <ItemDescription className="mx-auto lg:mx-0 lg:text-left">{college.course}</ItemDescription>
+
+
+              <Badge variant="secondary" className="
+              ring-2 ring-green-400 shadow-[0_0_8px_#22c55e,0_0_16px_#22c55e] bg-green-800
+              mx-auto
+              lg:mx-0
+              ">
                 <GraduationCap data-icon="inline-start" />
                 <span>{college.year}</span>
               </Badge>
           </ItemContent>
         </Item>
 
-        <Item className="ring-2 ring-blue-300 bg-blue-900 items-baseline shadow-[0_0_8px_#3b82f6,0_0_16px_#3b82f6]">
-          <ItemMedia className="bg-white p-1 rounded-full">
+        <Item className="
+        ring-2 
+        bg-[#0a1a0a]
+        items-baseline 
+        ring-2 ring-green-500 shadow-[0_0_8px_#22c55e,0_0_16px_#22c55e]
+        flex flex-col items-center
+        lg:flex-row items-baseline 
+        ">
+          <ItemMedia className="
+          bg-white p-1 rounded-full
+          mx-auto
+          ">
             <Image
               src={"/images/LSM_LOGO.png"}
               width={100}
@@ -65,15 +101,27 @@ function EducationPanel() {
               alt="dbtc"
             />
           </ItemMedia>
-          <ItemContent>
-            <ItemTitle className="text-lg ">
+          <ItemContent className="mx-auto">
+            <ItemTitle className="
+            text-xs
+            mx-auto
+            lg:text-lg
+            lg:mx-0
+            ">
               {seniorHighSchool.school}
-              
             </ItemTitle>
 
-            <ItemDescription>{seniorHighSchool.strand}</ItemDescription>
+            <ItemDescription className="text-center lg:text-left">{seniorHighSchool.strand}</ItemDescription>
 
-            <Badge variant="secondary" className="ring-2 ring-green-400 shadow-[0_0_8px_#22c55e,0_0_16px_#22c55e] bg-green-800">
+            <Badge variant="secondary" className="
+            ring-2 ring-green-400 
+            shadow-[0_0_8px_#22c55e,0_0_16px_#22c55e] 
+            bg-green-800
+            mx-auto
+
+            lg:mx-0
+
+            ">
                 <GraduationCap data-icon="inline-start" />
                 <span>{seniorHighSchool.year}</span>
               </Badge>

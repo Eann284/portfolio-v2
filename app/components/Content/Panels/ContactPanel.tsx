@@ -4,7 +4,7 @@ import MoreContact from "../MoreContact";
 
 function ContactPanel() {
   return (
-    <section className="flex flex-col gap-5 py-4 px-20">
+    <section className="flex flex-col gap-5 py-4 lg:px-20 ">
       <h1 className="mx-auto text-3xl">Contact</h1>
 
       <p className="text-center">Feel free to leave a message for me!</p>
